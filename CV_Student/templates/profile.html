@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Future Career Profile</title>
+    <link rel="stylesheet" href="style_profile.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <div class="header">
+            <div class="cover-image">
+                <input type="file" id="cover-upload" accept="image/*">
+                <img src="images/pngtree-futuristic-3d-rendering-of-an-endless-walkway-in-an-unoccupied-room-picture-image_7235050.jpg"
+                    alt="Cover Image" id="cover-img">
+            </div>
+            <div class="avatar" id="avatar-container">
+                <input type="file" id="avatar-upload" accept="image/*" style="display: none;">
+                <img src="images/avatar-trang-4.jpg" alt="Avatar" id="avatar-img">
+            </div>
+            <div class="profile-info">
+                <h2>Your Name</h2>
+                <h3>Job Position</h3>
+                <h4>Introduce yourself</h4>
+            </div>
+            <a href="edit_info.html" class="edit-icons">
+                <button>Edit Info</button>
+            </a>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="action-buttons">
+            <button>Download</button>
+            <button>Share Profile</button>
+            <button>Update Now</button>
+        </div>
+
+        <!-- Profile Sections -->
+        <div class="sections">
+            <div class="section-box">
+                <div class="section">
+                    <h5>Education <img src="images/education.png" alt="Education Icon"></h5>
+                    <button onclick="window.location.href='add_education.html'">Add Item</button>
+                </div>
+            </div>
+            <div class="section-box">
+                <div class="section">
+                    <h5>Experience <img src="images/experiance.png  " alt="Experience Icon"></h5>
+                    <button onclick="window.location.href='add_experience.html'">Add Item</button>
+                </div>
+            </div>
+            <div class="section-box">
+                <div class="section">
+                    <h5>Skills <img src="images/skill.png" alt="Skills Icon"></h5>
+                    <button onclick="window.location.href='add_skill.html'">Add Item</button>
+                </div>
+            </div>
+            <div class="section-box">
+                <div class="section">
+                    <h5>Certificate <img src="images/certificate.png" alt="Certificate Icon"></h5>
+                    <button onclick="window.location.href='add_certificate.html'">Add Item</button>
+                </div>
+            </div>
+            <div class="section-box">
+                <div class="section">
+                    <h5>Prize <img src="images/prize.webp" alt="Prize Icon"></h5>
+                    <button onclick="window.location.href='add_prize.html'">Add Item</button>
+                </div>
+            </div>
+            <div class="section-box">
+                <div class="section">
+                    <h5>Project <img src="images/project.png" alt="Project Icon"></h5>
+                    <button onclick="window.location.href='add_project.html'">Add Item</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Khi bấm vào avatar hoặc cover, mở hộp thoại chọn file
+        document.getElementById('avatar-img').addEventListener('click', function () {
+            document.getElementById('avatar-upload').click();
+        });
+
+        document.getElementById('cover-img').addEventListener('click', function () {
+            document.getElementById('cover-upload').click();
+        });
+
+        // Xử lý cập nhật ảnh đại diện
+        document.getElementById('avatar-upload').addEventListener('change', function (event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    document.getElementById('avatar-img').src = e.target.result;
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+
+        // Xử lý cập nhật ảnh bìa
+        document.getElementById('cover-upload').addEventListener('change', function (event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    document.getElementById('cover-img').src = e.target.result;
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+
+
+    </script>
+</body>
+
+</html>
