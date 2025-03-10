@@ -1,6 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    background: linear-gradient(to bottom, #e0f7fa, #4fc3f7);
+    background: linear-gradient(to bottom, white);
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -83,4 +83,6 @@ body {
   .update-btn:hover {
     background-color: #43A047;
   }
+
+  
   
